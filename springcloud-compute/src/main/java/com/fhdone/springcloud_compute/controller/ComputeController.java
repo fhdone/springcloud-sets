@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+
+// http://localhost:2222/service-instances/COMPUTE-SERVICE-B
 @RestController
 public class ComputeController {
     private final Logger logger = Logger.getLogger(getClass());

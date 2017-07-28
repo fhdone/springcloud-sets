@@ -1,4 +1,4 @@
-package com.fhdone.springcloud_compute;
+package com.fhdone.springribbon;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
