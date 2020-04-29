@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 @RabbitListener(queues = "topic.messages")
 public class HelloReceiverTM2 {
 
-	@RabbitHandler
-	 public void process(String context) {
-		System.out.println("TM2 Receiver  : " + context);
-	}
+    @RabbitHandler
+    public void process(String context) {
+        System.out.println("TM2 Receiver  : " + context);
+    }
 
 }

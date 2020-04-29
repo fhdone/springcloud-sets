@@ -7,17 +7,17 @@ import org.springframework.stereotype.Service;
 
 @Service("userService")
 public class UserService {
-	
-	@Autowired
-	private RedisTemplate redisTemplate;
 
-	public User queryUserByName(String name) {
-		System.out.println("queryUserByName");
-		ValueOperations<String, User> operations=redisTemplate.opsForValue();
-		User user = operations.get("com.fhdone");
-		return user;
+    @Autowired
+    private RedisTemplate redisTemplate;
+
+    public User queryUserByName(String name) {
+        System.out.println("queryUserByName");
+        ValueOperations<String, User> operations=redisTemplate.opsForValue();
+        User user = operations.get("com.fhdone");
+        return user;
     }
 
-	
-	
+
+
 }

@@ -16,30 +16,30 @@ public class IndexController {
 
 //	@Autowired
 //	private JdbcTemplate jdbcTemplate;
-	
-	@Autowired
-	private UserService userService;
-	
-	@RequestMapping("/")
-	String index() {
-		return "Welcome to know Spring Boot !";
-	}
 
-	@RequestMapping("/getUser")
-	public User getUser() {
-		User user=new User();
-		user.setUsername("小明");
-		user.setPassword("xxxx");
-		return user;
-	}
+    @Autowired
+    private UserService userService;
 
-	@RequestMapping("/getUserFromRedis")
-	@Cacheable(value="user-key")
-	public User getUserFromRedis() {
-		User user = userService.queryUserByName("com.fhdone");
-		return user;
-	}
-	
+    @RequestMapping("/")
+    String index() {
+        return "Welcome to know Spring Boot !";
+    }
+
+    @RequestMapping("/getUser")
+    public User getUser() {
+        User user=new User();
+        user.setUsername("小明");
+        user.setPassword("xxxx");
+        return user;
+    }
+
+    @RequestMapping("/getUserFromRedis")
+    @Cacheable(value="user-key")
+    public User getUserFromRedis() {
+        User user = userService.queryUserByName("com.fhdone");
+        return user;
+    }
+
 //	@GetMapping(path="/jdbcdemo")
 //	public @ResponseBody String getContracts() {
 //		return jdbcTemplate.queryForObject("select count(1) from contacts", String.class);

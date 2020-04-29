@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ServiceInstanceRestController {
-	@Autowired
+
+    @Autowired
 	private DiscoveryClient discoveryClient;
 
 	@RequestMapping("/service-instances/{applicationName}")

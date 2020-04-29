@@ -40,7 +40,7 @@ public class TestJDBC {
 //	
 	@Test
 	public void test() throws Exception {
-		Assert.assertEquals("7", jdbcTemplate1.queryForObject("select count(1) from contacts", String.class));
-		Assert.assertEquals("8", jdbcTemplate2.queryForObject("select count(1) from contacts", String.class));
+		Assert.assertNotNull(jdbcTemplate1.queryForObject("select count(1) from tbl_stu0", String.class));
+		Assert.assertNotNull(jdbcTemplate2.queryForObject("select count(1) from tbl_stu0", String.class));
 	}
 }

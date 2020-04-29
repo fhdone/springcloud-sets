@@ -10,31 +10,31 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class TopicRabbitConfig {
 
-	final static String message = "topic.message";
-	final static String messages = "topic.messages";
+    final static String MESSAGE = "topic.message";
+    final static String MESSAGES = "topic.messages";
 
-	@Bean
-	public Queue queueMessage() {
-		return new Queue(TopicRabbitConfig.message);
-	}
+    @Bean
+    public Queue queueMessage() {
+        return new Queue(TopicRabbitConfig.MESSAGE);
+    }
 
-	@Bean
-	public Queue queueMessages() {
-		return new Queue(TopicRabbitConfig.messages);
-	}
+    @Bean
+    public Queue queueMessages() {
+        return new Queue(TopicRabbitConfig.MESSAGES);
+    }
 
-	@Bean
-	TopicExchange exchange() {
-		return new TopicExchange("exchange");
-	}
+    @Bean
+    TopicExchange exchange() {
+        return new TopicExchange("exchange");
+    }
 
-	@Bean
-	Binding bindingExchangeMessage(Queue queueMessage, TopicExchange exchange) {
-		return BindingBuilder.bind(queueMessage).to(exchange).with("topic.message");
-	}
+    @Bean
+    Binding bindingExchangeMessage(Queue queueMessage, TopicExchange exchange) {
+        return BindingBuilder.bind(queueMessage).to(exchange).with("topic.message");
+    }
 
-	@Bean
-	Binding bindingExchangeMessages(Queue queueMessages, TopicExchange exchange) {
-		return BindingBuilder.bind(queueMessages).to(exchange).with("topic.#");
-	}
+    @Bean
+    Binding bindingExchangeMessages(Queue queueMessages, TopicExchange exchange) {
+        return BindingBuilder.bind(queueMessages).to(exchange).with("topic.#");
+    }
 }

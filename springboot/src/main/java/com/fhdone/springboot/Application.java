@@ -1,16 +1,13 @@
 package com.fhdone.springboot;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
 // http://www.jianshu.com/p/1a9fd8936bd8
-
 @SpringBootApplication
 @EnableScheduling
-@EnableAutoConfiguration
+//@EnableAutoConfiguration
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
 //@EnableAutoConfiguration
 //@EnableConfigurationProperties
@@ -18,7 +15,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class Application {
 
 
- public static void main(String[] args) throws Exception {
-     SpringApplication.run(Application.class, args);
- }
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(Application.class, args);
+    }
 }
